@@ -1,13 +1,20 @@
 <script setup lang="ts">
+import AuthorizationVue from '@/components/AuthorizationVue.vue'
+import { USER } from '@/role'
 import { ArrowDown, ShoppingCart } from '@element-plus/icons-vue'
+
+AuthorizationVue
 </script>
 <template>
   <el-row>
     <el-col :span="4" :offset="16">
-      <RouterLink to="/" style="text-decoration: none; color: black; margin-right: 5px">
+      <RouterLink
+        to="/"
+        style="text-decoration: none; color: black; margin-right: 5px; vertical-align: middle"
+      >
         主页
       </RouterLink>
-      <el-dropdown>
+      <el-dropdown style="margin-top: 4px; vertical-align: middle">
         <el-button type="primary">
           我的淘宝
           <el-icon class="el-icon--right"><ArrowDown /></el-icon>
@@ -25,13 +32,22 @@ import { ArrowDown, ShoppingCart } from '@element-plus/icons-vue'
       </el-dropdown>
     </el-col>
 
-    <el-col :span="3" :offset="0">
-      <RouterLink to="/cart" style="text-decoration: none; color: black">
+    <el-col :span="4">
+      <RouterLink to="/cart" style="text-decoration: none; color: black; vertical-align: middle">
         <el-icon :size="28" color="red" style="vertical-align: middle; margin-right: 10px">
           <ShoppingCart />
         </el-icon>
-        <span style="vertical-align: middle">购物车</span>
+        <span style="vertical-align: middle"
+          >购物车 <AuthorizationVue :role="USER">0</AuthorizationVue></span
+        >
       </RouterLink>
+      <a href="https://github.com/bwhyman/vue3-integration" target="_blank">
+        <img
+          style="width: 40px; height: auto; vertical-align: middle; margin-left: 10px"
+          src="https://clipground.com/images/github-logo-png-7.jpg"
+          alt="github"
+        />
+      </a>
     </el-col>
   </el-row>
 </template>

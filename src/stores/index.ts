@@ -6,5 +6,7 @@ export const useStore = defineStore('store', () => {
 
   const getItemA = async (id: string) => await getItem(id)
 
-  return { listItemsA, getItemA }
+  const roleS = ref('')
+
+  return { listItemsA, getItemA, roleS }
 })

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { categories } from './DatabaseUtils'
+import { Lollipop } from '@element-plus/icons-vue'
 </script>
 <template>
   <el-row style="align-items: center">
