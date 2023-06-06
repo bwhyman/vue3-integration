@@ -11,28 +11,27 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/main/home/item/ItemView.vue')
   },
   {
-    name: 'error',
-    path: '/error',
-    component: () => import('@/views/ErrorView.vue')
-  },
-  {
     path: '/login',
     component: () => import('@/views/main/login/LoginView.vue')
   },
   {
     name: '/usermanager',
     path: '/usermanager',
-    redirect: '/login'
+    redirect: '/login',
+    children: [
+      {
+        path: 'items',
+        redirect: '/login'
+      }
+    ]
   },
   {
-    name: '/usermanager/items',
-    path: '/usermanager/items',
-    redirect: '/login'
+    path: '/error',
+    component: () => import('@/views/ErrorView.vue')
   },
   {
-    name: 'nomatch',
     path: '/:pathMatch(.*)*',
-    redirect: '/login'
+    redirect: '/error'
   }
 ]
 

@@ -2,7 +2,6 @@ import { USER } from '@/role'
 import { type RouteRecordRaw } from 'vue-router'
 export const routes: RouteRecordRaw[] = [
   {
-    name: '/usermanager',
     path: '/usermanager',
     component: () => import('@/views/main/user/UserManagerView.vue'),
     meta: {
@@ -10,12 +9,11 @@ export const routes: RouteRecordRaw[] = [
     },
     children: [
       {
-        name: 'userhome',
+        name: '/usermanager',
         path: '',
         component: () => import('@/views/main/user/UserHomeView.vue')
       },
       {
-        name: '/usermanager/items',
         path: 'items',
         component: () => import('@/views/main/user/UserItemsView.vue')
       },

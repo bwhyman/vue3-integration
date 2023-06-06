@@ -9,7 +9,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AuthorizationVue: typeof import('./src/components/AuthorizationVue.vue')['default']
+    AlertDialog: typeof import('./src/components/AlertDialog.vue')['default']
+    AuthVue: typeof import('./src/components/AuthVue.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElCarousel: typeof import('element-plus/es')['ElCarousel']

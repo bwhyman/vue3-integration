@@ -2,6 +2,9 @@
 import { RouterView } from 'vue-router'
 import HeaderView from './views/header/HeaderView.vue'
 import FooterView from './views/footer/FooterView.vue'
+import { useExceptionStore } from '@/stores/ExceptionStore'
+const alertdialog = defineAsyncComponent(() => import('@/components/AlertDialog.vue'))
+const exceptionStore = useExceptionStore()
 </script>
 
 <template>
@@ -16,6 +19,7 @@ import FooterView from './views/footer/FooterView.vue'
       <FooterView />
     </el-footer>
   </el-container>
+  <alertdialog v-if="exceptionStore.exceptionS.length > 0" />
 </template>
 <style>
 * {
@@ -25,6 +29,7 @@ import FooterView from './views/footer/FooterView.vue'
 }
 body {
   background: rgb(234, 232, 235);
+  min-width: 100vw;
 }
 #app {
   max-width: 960px;

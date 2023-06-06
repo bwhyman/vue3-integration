@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { useStore } from '@/stores'
+import { useUserStore } from '@/stores/UserStore'
 interface Props {
   role: string
 }
 const props = defineProps<Props>()
-const store = useStore()
+const store = useUserStore()
+
 const roleC = computed(() => store.roleS == props.role)
 </script>
 <template>

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { User, Lock } from '@element-plus/icons-vue'
-import { useUserStore } from '../user/store'
+import { login } from '@/services'
+import type { User as UserType } from '@/types'
 
-const userStore = useUserStore()
-const userR = ref({ number: '1001', password: '1001' })
-
-const login = () => {
-  userStore.loginA(userR.value.number, userR.value.password)
+const userR = ref<UserType>({ number: '1001', password: '1001' })
+const loginF = () => {
+  login(userR.value)
+  userR.value = {}
 }
 </script>
 <template>
@@ -26,7 +26,7 @@ const login = () => {
             <el-form-item>
               <el-input type="password" :prefix-icon="Lock" v-model="userR.password" />
             </el-form-item>
-            <el-button style="width: 100%; background: red; color: white" @click="login"
+            <el-button style="width: 100%; background: red; color: white" @click="loginF"
               >登录</el-button
             >
           </el-form>

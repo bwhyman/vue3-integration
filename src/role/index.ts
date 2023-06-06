@@ -3,6 +3,6 @@ export const ADMIN = '7dab98'
 
 export const setRole = async (role: string) => {
   if (role == USER) {
-    ;(await import('@/views/main/user')).setUser()
+    await import('./user')
   }
 }

@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { useStore } from '@/stores'
-import type { Item } from '@/types/Type'
+import type { Item } from '@/types'
 import { ref, watchEffect } from 'vue'
+import { getItem } from '@/services'
 const props = defineProps<{ id: string }>()
 const itemR = ref<Item>()
 const loadingR = ref(true)
-const store = useStore()
 watchEffect(() => {
-  store.getItemA(props.id).then((item) => {
+  getItem(props.id).then((item) => {
     itemR.value = item
     loadingR.value = false
   })

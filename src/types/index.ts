@@ -1,3 +1,9 @@
+export interface User {
+  name?: string
+  number?: string
+  password?: string
+}
+
 export interface Item {
   id?: string
   name?: string
