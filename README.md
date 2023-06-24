@@ -13,23 +13,14 @@ miragejs 0.1.47
 src
 
 - assets，组件用静态资源，会被编译
-
 - axios
-
 - components，全局组件
-
 - mock
-
 - role，基于独立角色的路由等数据模块
-  
   - user
-
 - router，默认全局路由
-
 - services，业务逻辑，整合api请求
-
 - types，类型常量等
-
 - views，视图组件
 
 #### Dynamic Routing
