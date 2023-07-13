@@ -29,7 +29,7 @@ const exceptionStore = useExceptionStore()
 }
 body {
   background: rgb(234, 232, 235);
-  max-width: 100vw;
+  min-width: 100vw;
 }
 #app {
   max-width: 960px;

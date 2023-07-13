@@ -4,9 +4,12 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import { setRole } from './role'
-import { makeServer } from './mock'
 
+// 为了部署，在生产环境引入
+import { makeServer } from './mock'
 import.meta.env.DEV && makeServer()
+// 生产环境下不会引入
+// import.meta.env.DEV && (await import('./mock'))
 
 const roleId = sessionStorage.getItem('role')
 
